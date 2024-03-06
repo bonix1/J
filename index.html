@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi Jeah</title>
+    <style>
+        body {
+            background-color: gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            position: relative; /* Add relative position */
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .toggle-switch input[type="checkbox"] {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #e74c3c;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input[type="checkbox"]:checked + .toggle-slider {
+            background-color: #2ecc71;
+        }
+
+        input[type="checkbox"]:checked + .toggle-slider:before {
+            transform: translateX(26px);
+        }
+
+        /* New page styles */
+        .new-page-container {
+            display: none;
+            background-image: url('your-image-url-here.jpg');
+            background-size: cover;
+            height: 100vh;
+            width: 100vw;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+        }
+
+        .new-page-container .speech-bubble {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #f0f0f0;
+            border-radius: 10px;
+            padding: 20px;
+            color: #333;
+            width: 80%; /* Adjusted width */
+            max-width: 600px; /* Maximum width */
+            font-size: 16px; /* Adjusted font size */
+            text-align: center;
+            display: block;
+            overflow-y: auto; /* Enable scrolling if content exceeds the height */
+            max-height: calc(80% - 50px); /* Maximum height */
+            animation: fadeIn 0.5s ease-in-out; /* Animation */
+            padding-bottom: 70px; /* Adjusted padding for the button */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* "Click Me" button styles */
+        .click-me-button {
+            position: absolute;
+            top: 20px; /* Adjusted position */
+            left: 20px; /* Adjusted position */
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: none; /* Hide initially */
+            z-index: 10000; /* Ensure button appears above other elements */
+        }
+
+        .click-me-button:hover {
+            background-color: #27ae60;
+        }
+
+        /* Fixing button */
+        .toggle-switch {
+            margin-right: 20px; /* Adjusted margin */
+        }
+    </style>
+</head>
+<body>
+    <label class="toggle-switch">
+        <input type="checkbox" id="toggleSwitch">
+        <span class="toggle-slider"></span>
+    </label>
+    <div class="new-page-container">
+        <div class="speech-bubble">
+            Hi Jeah, all this time I really thought we could celebrate your special day together, I thought I could be one of your 18 roses dancing slowly in a romantic music as our relatives watch the both of us wearing their beautiful smiles on their faces, supporting the both of us in a world where we face our problems together united by love. I guess destiny isn't really on our side after all right? anyways Happy Birthdayyy Jiya, malditaa, palangga and my totga char. I want to thank you for simply existing. Thank you for guiding me sa times na kita, thank you for being with me even if there are times na I have nothing to give except my love. Thank you for showing me what true love really is. Jeah, I'm sorry if you had to go through all those pain. Dili na nako mabalik bisan unsa ko ka gnahan and unsa akong buhaton pero I'm really sorryyy. I hope you know na  I'd take a bullet para lang mawala tanan imong mga kaguol rn. Sige focus natas mga happy moments. Remember ka atong flowers na ako gihatag nimo katong nag atang tag ceres sa noreco dapit kay mo adto kag maloh? HAHAHA ahay ka cute nimo ato daiii I really saw how happy  you were bisan sa chat lang even if unsa rato ka barato  nakita jd nako na happy kaayo ka. Tablaw pako tago2 ato og suksok para lang ma surprise ka BWHAHAHAHA. Ahayyy what a time. Sige taas na kaayo and daghan pakong ma chika unta pero d man ko kabalo mo code pa kaayo ani uyy so kani nalang let me talk about it when we meet. Happy 18th birthday Jiya, naa rako diri para nimo permi and you will always have soft spot diri nakooo. Amping sa imong journey and when the time is right I hope the tides make our ships collide once again.See you when I see you my palangga I love youuu!
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('toggleSwitch').addEventListener('change', function() {
+            var newPageContainer = document.querySelector('.new-page-container');
+            var clickMeButton = document.querySelector('.click-me-button');
+            if (this.checked) {
+                newPageContainer.style.display = 'block';
+                clickMeButton.style.display = 'block';
+            } else {
+                newPageContainer.style.display = 'none';
+                clickMeButton.style.display = 'none';
+            }
+        });
+    </script>
+    <button class="click-me-button" onclick="window.location.href=f.html">Click Me</button>
+</body>
+</html>
